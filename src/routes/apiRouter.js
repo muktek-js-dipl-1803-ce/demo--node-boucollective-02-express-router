@@ -5,24 +5,25 @@ const apiRouter  = Router()
 
 apiRouter.get('/', (req, res)=>{
   res.json({
-    '/api/users' : 'Show users',
-    '/api/messages' : 'Show messages'
+    '/api/vendors' : 'Show users',
+    '/api/products' : 'Show messages'
   })
 })
 
-apiRouter.get('/users', (req, res)=>{
+apiRouter.get('/vendors', (req, res)=>{
   res.json([
-    {id: 1, name: 'Steffi', age: 25},
-    {id: 2, name: 'Adrian', age: 28},
-    {id: 3, name: 'Bertha', age: 77}
+    {id: 1, name: 'Lionheart Beach',  year_established: 2008},
+    {id: 2, name: 'SCHUNNE', year_established: 2013},
+    {id: 3, name: 'CRNDesign', year_established: 2011}
   ])
 })
 
-apiRouter.get('/messages', (req, res)=>{
+apiRouter.get('/products', (req, res)=>{
   res.json([
-    { id: 1, user_id: 2, body: 'Hey Bertha!'},
-    { id: 2, user_id: 3, body: 'Hey Steffi!'},
-    { id: 3, user_id: 2, body: 'Good to see you'}
+    { id: 1, body: 'Work Planner Stickers', price: 75, vendor_id: 3},
+    { id: 2, body: 'Christmas Rabbit Toy', price: 43, vendor_id: 3},
+    { id: 3, body: 'Crossbody Brown Leather Bag', price: 21, vendor_id: 1},
+    { id: 4, body: 'Isabel Linen Kimodo Dress', price: 21, vendor_id: 2}
   ])
 })
 
