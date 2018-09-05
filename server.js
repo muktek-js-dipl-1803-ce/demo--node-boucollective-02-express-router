@@ -1,4 +1,6 @@
 const express = require('express')
+
+//part.02.B.1 - import routers
 const pageRouter = require('./src/routes/pageRouter.js')
 const apiRouter = require('./src/routes/apiRouter.js')
 
@@ -6,7 +8,7 @@ const app = express()
 const PORT = 3000
 
 
-
+//part.02.B.2 - configure routers with express under '/' and '/api' prefixes
 app.use('/api', apiRouter)
 app.use('/', pageRouter)
 
