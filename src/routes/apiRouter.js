@@ -1,9 +1,12 @@
 const Router = require('express').Router
 
+// part.02--b1) Create instance of router
 const apiRouter  = Router()
 
-
+// part.02--b2) Declare routes
 apiRouter.get('/', (req, res)=>{
+
+  // part.02--b3) Send data as array
   res.json({
     '/api/vendors' : 'Show users',
     '/api/products' : 'Show messages'
