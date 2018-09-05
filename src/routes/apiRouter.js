@@ -1,19 +1,22 @@
+// part.02.B.1 - import router
 const Router = require('express').Router
 
-// part.02--b1) Create instance of router
+// part.02.B.2 - initialize router instance
 const apiRouter  = Router()
 
-// part.02--b2) Declare routes
 apiRouter.get('/', (req, res)=>{
 
-  // part.02--b3) Send data as array
   res.json({
     '/api/vendors' : 'Show users',
     '/api/products' : 'Show messages'
   })
 })
 
+// part.02.B.3 - set up router to respond to GET requests
+//              (to api/vendors) ... do this for all 3 routes
 apiRouter.get('/vendors', (req, res)=>{
+
+  // part.02.B.4 - send json `res.json(...)`
   res.json([
     {id: 1, name: 'Lionheart Beach',  year_established: 2008},
     {id: 2, name: 'SCHUNNE', year_established: 2013},
@@ -30,4 +33,6 @@ apiRouter.get('/products', (req, res)=>{
   ])
 })
 
+
+// part.02.B.5 - export router
 module.exports = apiRouter
